@@ -3,6 +3,7 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 clock = pygame.time.Clock()
 
+
 red = (255, 0, 0)
 green = (0, 255, 0)
 
