@@ -23,9 +23,12 @@ starttext2 = startfont2.render('Avoid the red, get to the green!', True, (0, 0, 
 starttextRect2 = starttext2.get_rect()
 starttextRect2.center = (400, 400)
 
+wintext = startfont.render('YOU WIN!', True, (0, 0, 0))
+wintextRect = wintext.get_rect()
+wintextRect.center = (400, 300)
+
 
 levelfont = pygame.font.SysFont(None, 50)
-
 
 
 screen.fill((0, 0, 255))
@@ -39,8 +42,14 @@ def dead():
   pygame.display.flip()
   time.sleep(2)
   game_loop()
-  
-  
+
+def win():
+  screen.fill(green)
+  screen.blit(wintext, (wintextRect))
+  pygame.display.flip()
+  time.sleep(2)
+  exit()
+ 
 def border():
   pygame.draw.rect(screen, (red), pygame.Rect(0, 0, 800, 50))
   pygame.draw.rect(screen, (red), pygame.Rect(0, 550, 800, 50))
@@ -50,8 +59,6 @@ def game_loop():
   level1 = True
   level2 = False
   level3 = False
-  level4 = False
-  level5 = False
 
   x = 20
   y = 400
@@ -140,21 +147,7 @@ def game_loop():
         level3 = True
     
     if level3:
-      levelNum = 3
-      border()
-
-      pygame.draw.rect(screen, (red), pygame.Rect(550, 0, 50, 400))
-
-
-
-      
-
-    if level4:
-      pass
-    
-    if level5:
-      pass
-
+      win()
 
     screen.blit(characterImg, (x, y))
     screen.blit(leveltext, leveltextRect)
