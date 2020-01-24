@@ -34,10 +34,11 @@ pygame.display.flip()
 time.sleep(2)
 
 def dead():
-  screen.fill(red)
-  pygame.display.flip()
-  time.sleep(2)
-  game_loop()
+  print('dead')
+  #screen.fill(red)
+  #pygame.display.flip()
+  #time.sleep(2)
+  #game_loop()
   
   
 def border():
@@ -126,11 +127,14 @@ def game_loop():
 
       if y <= 380 and x <= 220 and x + characterw >= 210:
         dead()
-      
-
+      if y + characterh >= 350 and y <= 400 and x + characterw >= 210 and x <= 570:
+        dead()
+      if y + characterh >= 200 and y <= 350 and x + characterw >= 560 and x <= 570:
+        dead()
+   
       if y > 200 and x > 230 and y + characterh < 350 and x + characterw < 530:
         time.sleep(2)
-        x = 500
+        x = 650
         y = 100
         level2 = False
         level3 = True
@@ -139,8 +143,17 @@ def game_loop():
       levelNum = 3
       border()
 
+      pygame.draw.rect(screen, (red), pygame.Rect(550, 0, 50, 400))
+
+
+
       
 
+    if level4:
+      pass
+    
+    if level5:
+      pass
 
 
     screen.blit(characterImg, (x, y))
