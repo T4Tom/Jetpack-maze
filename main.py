@@ -35,11 +35,10 @@ pygame.display.flip()
 time.sleep(2)
 
 def dead():
-  print('dead')
-  #screen.fill(red)
-  #pygame.display.flip()
-  #time.sleep(2)
-  #game_loop()
+  screen.fill(red)
+  pygame.display.flip()
+  time.sleep(2)
+  game_loop()
   
   
 def border():
